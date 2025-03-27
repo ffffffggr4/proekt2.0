@@ -3,14 +3,14 @@ from datetime import datetime, timedelta
 from PIL import Image
 import os
 
-# Создаем список праздников
+
 holidays = {
     "Новогодние праздники": datetime(2023, 12, 31),
     "Рождество": datetime(2024, 1, 7),
     "Международный женский день": datetime(2024, 3, 8),
 }
 
-# Функция для отображения календаря с праздниками
+
 def display_calendar():
     st.header("Календарь праздников")
     current_date = datetime.now()
@@ -21,7 +21,7 @@ def display_calendar():
             if st.button('☀️', key=str(date)):
                 st.success(f"Вы нажали на иконку праздника: {holiday}")
 
-# Функция для добавления собственных праздников
+
 def add_holiday():
     st.header("Добавить свой праздник")
     holiday_name = st.text_input("Введите название праздника")
@@ -34,7 +34,7 @@ def add_holiday():
         else:
             st.error("Пожалуйста, заполните все поля")
 
-# Функция для создания расписания с уведомлениями
+
 def schedule_events():
     st.header("Создать расписание мероприятий")
     event_name = st.text_input("Введите название мероприятия")
@@ -44,7 +44,7 @@ def schedule_events():
     if st.button("Добавить мероприятие"):
         if event_name:
             st.success(f"{event_name} добавлено на {event_date} в {notify_time}. Уведомление будет отправлено.")
-            # Здесь можно добавить логику для отправки уведомлений (например, с помощью библиотеки `playsound` или `pygame`)
+           
         else:
             st.error("Пожалуйста, заполните все поля")
 
